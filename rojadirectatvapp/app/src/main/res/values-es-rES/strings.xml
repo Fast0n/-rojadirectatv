@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RojadirectvApp</string>
+    <string name="title_activity_home">ROJADIRECTA: dia, hora y Ver La Liga Santander en vivo Gratis</string>
+    <string name="title_legal">Legal</string>
+    <string name="title_home">Inicio</string>
+    <string name="version">Versión %1$s</string>
+    <string name="title_fragment_legal">Advertencia Legal</string>
+    <string name="open">Abre</string>
+    <string name="share">Comparte</string>
+    <string name="start">Inicio de las horas del evento:</string>
+    <string name="titleCardView_fragment_settings">Tema Oscuro</string>
+    <string name="titleTextView_fragment_settings">Información sobre %1$s</string>
+    <string name="title_fragment_settings">Configuración</string>
+    <string name="close">Cierra</string>
+
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">RojadirectvApp</string>
+    <string name="title_toolbar" translatable="false">Rojadirectv</string>
+    <string name="url_home" translatable="false">https://rojadirectatv.glitch.me/list</string>
+    <string name="url_legal" translatable="false">https://rojadirectatv.glitch.me/legal</string>
+
+
+    <string name="title_activity_home">ROJADIRECTA: giorno, ora e guarda La Liga Santander live gratis</string>
+    <string name="title_fragment_legal">Avviso Legale</string>
+    <string name="title_fragment_settings">Impostazioni</string>
+
+    <string name="titleCardView_fragment_settings">Tema Scuro</string>
+    <string name="titleTextView_fragment_settings">Informazioni su %1$s</string>
+
+
+    <string name="share">Condividi</string>
+    <string name="open">Apri</string>
+    <string name="start">Inizio evento ore:</string>
+    <string name="version">Versione %1$s</string>
+
+
+    <string name="title_home">Home</string>
+    <string name="title_legal">Legale</string>
+    <string name="close">Chiudi</string>
+</resources>
