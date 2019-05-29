@@ -46,14 +46,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
         imageButton = findViewById(R.id.imageButton);
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                loadFragment(new SettingsFragment());
+        imageButton.setOnClickListener(view -> {
+            loadFragment(new SettingsFragment());
 
-                navView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
-                navView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
-            }
+            navView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
+            navView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
         });
 
         loadFragment(new HomeFragment());

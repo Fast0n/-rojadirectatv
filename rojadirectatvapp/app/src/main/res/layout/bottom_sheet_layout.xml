@@ -34,12 +34,12 @@
 
 
     <View
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/darker_gray" />
 
     <LinearLayout
         android:id="@+id/close"
@@ -48,8 +48,8 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:orientation="horizontal"
         android:gravity="center"
+        android:orientation="horizontal"
         android:padding="16dp">
 
         <TextView
