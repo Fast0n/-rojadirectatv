@@ -154,6 +154,11 @@ public class HomeFragment extends Fragment {
                 String str_status = scorrOrari.getString("url_status");
                 String _class = scorrOrari.getString("class");
 
+                if (str_status.equals("0"))
+                    str_status = "⛔️"+getString(R.string.status);
+                else
+                    str_status = "✅"+getString(R.string.sstatus);
+
                 if (str_time.equals("24/7"))
                     dataHours.add(new DataItems(str_name, str_time, str_url, str_status));
                 else

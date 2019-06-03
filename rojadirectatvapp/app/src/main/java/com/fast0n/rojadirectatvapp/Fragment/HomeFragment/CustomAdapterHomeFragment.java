@@ -91,7 +91,7 @@ public class CustomAdapterHomeFragment extends ArrayAdapter<DataItems> {
             if (name.split("::")[0].equals("options")) {
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 ExampleBottomSheetDialog bottomSheetDialog = new ExampleBottomSheetDialog(viewHolder.option_more.getText().toString());
-                bottomSheetDialog.show(activity.getSupportFragmentManager(), "pippo");
+                bottomSheetDialog.show(activity.getSupportFragmentManager(), "show");
             }
 
         });

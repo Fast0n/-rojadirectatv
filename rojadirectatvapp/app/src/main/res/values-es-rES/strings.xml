@@ -13,5 +13,7 @@
     <string name="titleTextView_fragment_settings">Información sobre %1$s</string>
     <string name="title_fragment_settings">Configuración</string>
     <string name="close">Cierra</string>
+    <string name="status">Estado: No verificado</string>
+    <string name="sstatus">Estado: verificado y funcional</string>
 
 </resources>

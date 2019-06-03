@@ -19,15 +19,15 @@ public class DataItems {
         return name;
     }
 
-    public String getTime() {
+    String getTime() {
         return time;
     }
 
-    public String getUrl() {
+    String getUrl() {
         return url;
     }
 
-    public String getUrl_status() {
+    String getUrl_status() {
         return url_status;
     }
 

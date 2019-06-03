@@ -13,5 +13,7 @@
     <string name="title_legal">Legal</string>
     <string name="version">"Version "</string>
     <string name="close">Close</string>
+    <string name="status">Status: Not certified</string>
+    <string name="sstatus">Status: Verified and certified</string>
 
 </resources>

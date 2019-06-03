@@ -22,4 +22,6 @@
     <string name="title_home">Home</string>
     <string name="title_legal">Legale</string>
     <string name="close">Chiudi</string>
+    <string name="status">Stato: Non verificato</string>
+    <string name="sstatus">Stato: Verificato e funzionante</string>
 </resources>
