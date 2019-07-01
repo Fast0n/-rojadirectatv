@@ -27,12 +27,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- style="@style/Widget.MaterialComponents.Button.OutlinedButton" -->
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdate"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="?attr/colorPrimary"
+        android:elevation="1dp"
+        android:text="Aggiorna"
+        android:textColor="?attr/color_background"
+        android:visibility="gone"
+        app2:layout_constraintEnd_toEndOf="parent"
+        app2:layout_constraintStart_toStartOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/title"
+        app:strokeColor="?attr/colorPrimary" />
+
+
     <ListView
         android:id="@+id/list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="2dp"
         android:orientation="vertical"
@@ -41,6 +60,6 @@
         app2:layout_constraintBottom_toBottomOf="parent"
         app2:layout_constraintEnd_toEndOf="parent"
         app2:layout_constraintStart_toStartOf="parent"
-        app2:layout_constraintTop_toBottomOf="@+id/title" />
+        app2:layout_constraintTop_toTopOf="@+id/btnUpdate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

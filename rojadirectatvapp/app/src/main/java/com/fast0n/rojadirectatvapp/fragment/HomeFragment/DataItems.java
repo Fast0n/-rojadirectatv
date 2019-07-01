@@ -1,4 +1,4 @@
-package com.fast0n.rojadirectatvapp.Fragment.HomeFragment;
+package com.fast0n.rojadirectatvapp.fragment.HomeFragment;
 
 public class DataItems {
 

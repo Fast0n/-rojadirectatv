@@ -1,4 +1,4 @@
-package com.fast0n.rojadirectatvapp.Fragment.HomeFragment;
+package com.fast0n.rojadirectatvapp.fragment.HomeFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fast0n.rojadirectatvapp.ExampleBottomSheetDialog;
 import com.fast0n.rojadirectatvapp.R;
+import com.fast0n.rojadirectatvapp.bottomsheetdialog.BottomSheetDialogShare;
 
 import java.util.ArrayList;
 
@@ -90,7 +90,7 @@ public class CustomAdapterHomeFragment extends ArrayAdapter<DataItems> {
 
             if (name.split("::")[0].equals("options")) {
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                ExampleBottomSheetDialog bottomSheetDialog = new ExampleBottomSheetDialog(viewHolder.option_more.getText().toString());
+                BottomSheetDialogShare bottomSheetDialog = new BottomSheetDialogShare(viewHolder.option_more.getText().toString());
                 bottomSheetDialog.show(activity.getSupportFragmentManager(), "show");
             }
 

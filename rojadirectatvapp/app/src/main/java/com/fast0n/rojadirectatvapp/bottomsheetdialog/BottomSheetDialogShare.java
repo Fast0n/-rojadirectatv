@@ -1,22 +1,23 @@
-package com.fast0n.rojadirectatvapp;
+package com.fast0n.rojadirectatvapp.bottomsheetdialog;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.fast0n.rojadirectatvapp.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
-public class ExampleBottomSheetDialog extends BottomSheetDialogFragment {
+public class BottomSheetDialogShare extends BottomSheetDialogFragment {
 
     String stringShare;
 
-    public ExampleBottomSheetDialog(String infoShare) {
+    public BottomSheetDialogShare(String infoShare) {
         stringShare = infoShare;
 
     }
@@ -24,12 +25,12 @@ public class ExampleBottomSheetDialog extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+        View view = inflater.inflate(R.layout.bottom_sheet_layout_share, container, false);
+        inflater.getContext().setTheme(R.style.BottomSheetDialogTheme);
 
 
-        LinearLayout close, share;
+        ConstraintLayout share;
 
-        close = view.findViewById(R.id.close);
 
         share = view.findViewById(R.id.fragment_history_bottom_sheet_share);
 
@@ -48,9 +49,6 @@ public class ExampleBottomSheetDialog extends BottomSheetDialogFragment {
             view12.getContext().startActivity(Intent.createChooser(sharingIntent, view12.getContext().getString(R.string.share)));
             dismiss();
         });
-
-
-        close.setOnClickListener(view1 -> dismiss());
 
 
         return view;

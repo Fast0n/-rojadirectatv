@@ -1,4 +1,4 @@
-package com.fast0n.rojadirectatvapp.Fragment;
+package com.fast0n.rojadirectatvapp.fragment;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -39,8 +39,8 @@ public class LegalFragment extends Fragment {
 
         try {
             if (isOnline()) {
-                get(url, view, 0);
-
+                //get(url, view, 0);
+                get(url, view, 1);
             } else
                 get(url, view, 1);
         } catch (Exception e) {

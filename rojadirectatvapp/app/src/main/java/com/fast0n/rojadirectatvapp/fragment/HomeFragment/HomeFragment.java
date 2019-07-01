@@ -1,8 +1,6 @@
-package com.fast0n.rojadirectatvapp.Fragment.HomeFragment;
+package com.fast0n.rojadirectatvapp.fragment.HomeFragment;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,8 +8,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,8 +32,9 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
 
-    CustomAdapterHomeFragment adapter;
-    ProgressBar pb;
+    private CustomAdapterHomeFragment adapter;
+    private Button btn_update;
+    private ListView listView;
 
 
     @Nullable
@@ -41,15 +42,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        pb = getActivity().findViewById(R.id.progressBar);
-        pb.setProgressTintList(ColorStateList.valueOf(Color.RED));
+
+        btn_update = view.findViewById(R.id.btnUpdate);
         String url = getResources().getString(R.string.url_home);
 
         try {
             if (isOnline()) {
                 get(url, view, 0);
                 get(url, view, 1);
-                pb.setVisibility(View.VISIBLE);
+
             } else
                 get(url, view, 1);
         } catch (Exception e) {
@@ -71,15 +72,25 @@ public class HomeFragment extends Fragment {
     private void get(String url, View view1, int i) {
 
 
-        ListView listView = view1.findViewById(R.id.list);
+        listView = view1.findViewById(R.id.list);
+
+        btn_update.setOnClickListener(view -> {
+            listView.setAdapter(null);
+            get(url, view1, 0);
+            btn_update.setVisibility(View.GONE);
+            PreferenceManager.getDefaultSharedPreferences(view1.getContext()).edit()
+                    .remove("credit_cache").apply();
+
+        });
 
 
         if (i == 1) {
+            String jsonCredit = PreferenceManager.
+                    getDefaultSharedPreferences(view1.getContext()).getString("credit", null);
+
+
             try {
                 JSONArray json_raw, jsonArray1;
-                String jsonCredit = PreferenceManager.
-                        getDefaultSharedPreferences(view1.getContext()).getString("credit", null);
-
 
                 jsonArray1 = new JSONArray(jsonCredit);
                 json_raw = jsonArray1;
@@ -98,7 +109,6 @@ public class HomeFragment extends Fragment {
         } else {
 
             RequestQueue queue = Volley.newRequestQueue(view1.getContext());
-            // Initialize a new JsonArrayRequest instance
             JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                     Request.Method.GET,
                     url,
@@ -107,19 +117,36 @@ public class HomeFragment extends Fragment {
 
 
                         PreferenceManager.getDefaultSharedPreferences(view1.getContext()).edit()
-                                .remove("credit").apply();
-
-
-                        PreferenceManager.getDefaultSharedPreferences(view1.getContext()).edit()
                                 .putString("credit", response.toString()).apply();
 
 
-                        try {
-                            JSONArray json_raw = new JSONArray(response.toString());
-                            ArrayList<DataItems> dataHours = new ArrayList<>();
-                            makeList(dataHours, json_raw, view1, listView);
+                        String jsonCredit_cache = PreferenceManager.
+                                getDefaultSharedPreferences(view1.getContext()).getString("credit_cache", null);
 
-                        } catch (JSONException ignored) {
+                        String jsonCredit = PreferenceManager.
+                                getDefaultSharedPreferences(view1.getContext()).getString("credit", null);
+
+                        if (jsonCredit_cache == null) {
+
+                            PreferenceManager.getDefaultSharedPreferences(view1.getContext()).edit()
+                                    .putString("credit_cache", response.toString()).apply();
+
+                            try {
+                                JSONArray json_raw = new JSONArray(response.toString());
+                                ArrayList<DataItems> dataHours = new ArrayList<>();
+                                makeList(dataHours, json_raw, view1, listView);
+
+                            } catch (JSONException e) {
+                                Log.e("error", e.toString());
+
+
+                            }
+
+
+                        } else if (!jsonCredit.equals(jsonCredit_cache)) {
+                            btn_update.setVisibility(View.VISIBLE);
+                            Animation aniSlide = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_up);
+                            btn_update.setAnimation(aniSlide);
 
 
                         }
@@ -137,7 +164,6 @@ public class HomeFragment extends Fragment {
             queue.add(jsonArrayRequest);
 
 
-            //fine
         }
     }
 
@@ -155,9 +181,9 @@ public class HomeFragment extends Fragment {
                 String _class = scorrOrari.getString("class");
 
                 if (str_status.equals("0"))
-                    str_status = "⛔️"+getString(R.string.status);
+                    str_status = "⛔️" + getString(R.string.status);
                 else
-                    str_status = "✅"+getString(R.string.sstatus);
+                    str_status = "✅" + getString(R.string.sstatus);
 
                 if (str_time.equals("24/7"))
                     dataHours.add(new DataItems(str_name, str_time, str_url, str_status));
@@ -168,8 +194,8 @@ public class HomeFragment extends Fragment {
 
             adapter = new CustomAdapterHomeFragment(view1.getContext(), dataHours);
 
+
             listView.setAdapter(adapter);
-            pb.setVisibility(View.GONE);
         } catch (JSONException e) {
             Log.e("strn:", e.toString());
 

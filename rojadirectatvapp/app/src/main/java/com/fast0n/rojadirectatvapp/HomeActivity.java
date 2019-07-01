@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.fast0n.rojadirectatvapp.Fragment.HomeFragment.HomeFragment;
-import com.fast0n.rojadirectatvapp.Fragment.LegalFragment;
-import com.fast0n.rojadirectatvapp.Fragment.SettingsFragment;
+import com.fast0n.rojadirectatvapp.bottomsheetdialog.BottomSheetDialogSettings;
+import com.fast0n.rojadirectatvapp.fragment.HomeFragment.HomeFragment;
+import com.fast0n.rojadirectatvapp.fragment.LegalFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -47,7 +47,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         imageButton = findViewById(R.id.imageButton);
 
         imageButton.setOnClickListener(view -> {
-            loadFragment(new SettingsFragment());
+            BottomSheetDialogSettings bottomSheetDialog = new BottomSheetDialogSettings();
+            bottomSheetDialog.show(getSupportFragmentManager(), "show");
 
             navView.getMenu().findItem(R.id.uncheckedItem).setChecked(true);
             navView.findViewById(R.id.uncheckedItem).setVisibility(View.GONE);
@@ -71,7 +72,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         Fragment fragment = null;
-        editor = settings.edit();
 
         switch (item.getItemId()) {
             case R.id.navigation_home:
