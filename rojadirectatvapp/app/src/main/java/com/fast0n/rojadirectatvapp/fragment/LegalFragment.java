@@ -39,7 +39,6 @@ public class LegalFragment extends Fragment {
 
         try {
             if (isOnline()) {
-                //get(url, view, 0);
                 get(url, view, 1);
             } else
                 get(url, view, 1);

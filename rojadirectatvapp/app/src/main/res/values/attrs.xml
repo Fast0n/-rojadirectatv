@@ -6,7 +6,5 @@
         <attr name="color_desc" format="color" />
         <attr name="color_toolbar" format="color" />
         <attr name="color_object" format="color" />
-
-
     </declare-styleable>
 </resources>

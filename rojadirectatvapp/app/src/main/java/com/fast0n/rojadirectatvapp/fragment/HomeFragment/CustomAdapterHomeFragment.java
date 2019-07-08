@@ -3,7 +3,6 @@ package com.fast0n.rojadirectatvapp.fragment.HomeFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,13 +75,6 @@ public class CustomAdapterHomeFragment extends ArrayAdapter<DataItems> {
         editor = settings.edit();
         theme = settings.getString("toggleTheme", null);
 
-
-        int mColor;
-        if (theme.equals("0"))
-            mColor = Color.parseColor("#F5F5F5");
-        else
-            mColor = Color.parseColor("#212121");
-
         ViewHolder.share.setOnClickListener(view -> {
 
 
@@ -104,7 +96,8 @@ public class CustomAdapterHomeFragment extends ArrayAdapter<DataItems> {
 
         viewHolder.option_more.setText("options" + "::" +
                 dataItems.getName() + "::" +
-                dataItems.getTime() + "::");
+                dataItems.getTime() + "::" +
+                dataItems.getUrl());
 
         return convertView;
     }

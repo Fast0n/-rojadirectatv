@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
 
         if (i == 1) {
             String jsonCredit = PreferenceManager.
-                    getDefaultSharedPreferences(view1.getContext()).getString("credit", null);
+                    getDefaultSharedPreferences(view1.getContext()).getString("credit_cache", null);
 
 
             try {
@@ -188,7 +188,7 @@ public class HomeFragment extends Fragment {
                 if (str_time.equals("24/7"))
                     dataHours.add(new DataItems(str_name, str_time, str_url, str_status));
                 else
-                    dataHours.add(new DataItems(str_icon + " " + _class + ": " + str_name, getString(R.string.start) + " " + str_time, str_url, str_status));
+                    dataHours.add(new DataItems(str_icon + " " + _class + ": " + str_name, "🕜 " + getString(R.string.start) + " " + str_time, str_url, str_status));
             }
 
 

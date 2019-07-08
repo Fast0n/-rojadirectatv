@@ -37,11 +37,12 @@ public class BottomSheetDialogShare extends BottomSheetDialogFragment {
         share.setOnClickListener(view12 -> {
             String _name = stringShare.split("::")[1];
             String time = stringShare.split("::")[2];
+            String url = stringShare.split("::")[3];
 
 
             String share1 =
                     _name.toUpperCase() + "\n🕜 "
-                            + "" + " " + time;
+                            + "" + " " + time + "\n\n" + url;
 
             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
