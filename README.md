@@ -1,7 +1,13 @@
 # RojadirectaTV
-<a href="https://paypal.me/fast0n" title="Donate"><img src="https://img.shields.io/badge/Donate-PayPal-009cde.svg?style=flat-square"></a>
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue?style=flat-square)](https://paypal.me/fast0n) [![License](https://img.shields.io/github/license/Fast0n/rojadirectatv)](https://github.com/Fast0n/rojadirectatv/blob/master/LICENSE)
 
 Watch real-time sports events on http://www.rojadirectatv.tv.
+
+## Api function
+
+* Legal
+* List
+
 
 ## App function
 
@@ -10,9 +16,9 @@ Watch real-time sports events on http://www.rojadirectatv.tv.
 * Share
 * Settings
 
-## App screenshot
+### Screenshot
 
-<a><img src='./imgStore/home.png' height='400' alt='icon'/></a>
-<a><img src='./imgStore/home_darktheme.png' height='400' alt='icon'/></a>
-<a><img src='./imgStore/share.png' height='400' alt='icon'/></a>
-<a><img src='./imgStore/settings.png' height='400' alt='icon'/></a>
+<a><img src='./img/home.png' height='400' alt='icon'/></a>
+<a><img src='./img/home_darktheme.png' height='400' alt='icon'/></a>
+<a><img src='./img/share.png' height='400' alt='icon'/></a>
+<a><img src='./img/settings.png' height='400' alt='icon'/></a>
