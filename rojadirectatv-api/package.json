@@ -1,15 +1,14 @@
 {
   "name": "rojadirectatv-api",
-  "version": "0.0.3",
-  "description": "API for the site rojadirectatv.tv",
+  "version": "0.0.4",
+  "description": "API for the site rojadirectatv.biz",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "request": "^2.88.2",
-    "cheerio": "^0.22.0",
-    "sort-json-array": "^0.1.7"
+    "cheerio": "^0.22.0"
   },
   "engines": {
     "node": "9.x"

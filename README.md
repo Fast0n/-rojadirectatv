@@ -1,7 +1,7 @@
 # RojadirectaTV
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue?style=flat-square)](https://paypal.me/fast0n) [![License](https://img.shields.io/github/license/Fast0n/rojadirectatv)](https://github.com/Fast0n/rojadirectatv/blob/master/LICENSE)
 
-Watch real-time sports events on http://www.rojadirectatv.tv.
+Watch real-time sports events on http://www.rojadirectatv.biz.
 
 ## Api function
 
